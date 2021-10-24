@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator">
+    <form name="forms" action="" method="">
+      <fieldset>
+        <legend>Calculator</legend>
+        <input type="text" name="output" readonly>
+        <input type="button" class="clear" value="C" onclick="document.forms.output.value=''">
+        <input type="button" class="operator" value="/" onclick="document.forms.output.value+='/'">
+        <input type="button" value="1" onclick="document.forms.output.value+='1'"> <!-- a = a + b -> a += b -->
+        <input type="button" value="2" onclick="document.forms.output.value+='2'">
+        <input type="button" value="3" onclick="document.forms.output.value+='3'">
+        <input type="button" class="operator" value="*" onclick="document.forms.output.value+='*'">
+        <input type="button" value="4" onclick="document.forms.output.value+='4'">
+        <input type="button" value="5" onclick="document.forms.output.value+='5'">
+        <input type="button" value="6" onclick="document.forms.output.value+='6'">
+        <input type="button" class="operator" value="+" onclick="document.forms.output.value+='+'">
+        <input type="button" value="7" onclick="document.forms.output.value+='7'">
+        <input type="button" value="8" onclick="document.forms.output.value+='8'">
+        <input type="button" value="9" onclick="document.forms.output.value+='9'">
+        <input type="button" class="operator" value="-" onclick="document.forms.output.value+='-'">
+        <input type="button" class="dot" value="." onclick="document.forms.output.value+='.'">
+        <input type="button" value="0" onclick="document.forms.output.value+='0'">
+        <!-- 주의: 문자열로부터 eval()을 실행하는 것은 엄청나게 위험합니다. eval()을 사용하면 해커가 위험한 코드를 사용할 수 있습니다.  -->
+        <input type="button" class="operator result" value="=" onclick="document.forms.output.value=eval(document.forms.output.value)">
+      </fieldset>
+    </form>
+  </div>
+</body>
+</html>
