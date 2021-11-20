@@ -1,0 +1,20 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+p {
+  font-size: 2rem;
+  color: white;
+}
+.coral{
+  background-color: coral;
+}
+.powderblue{
+  background-color: powderblue;
+}
+.yellowgreen{
+  background-color: yellowgreen;
+}
