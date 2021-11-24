@@ -45,6 +45,19 @@ ul li:nth-child(5) {
   transform: scale(1);
 }
 
+.slide_btn_wrap {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.slide_btn_wrap button {
+  width: 30px;
+  height: 30px;
+  margin: 10px 0;
+}
+
 .btn_wrap {
   margin: 20px 0;
   display: flex;

@@ -24,6 +24,29 @@ function showSlide() {
   }
 }
 
+// Create Slide Button
+const slideBtnWrap = document.querySelector(".slide_btn_wrap");
+const sildeCount = ul.childElementCount;
+for(i = 0; i < sildeCount; i++){
+  const button = document.createElement("button");
+  button.innerText = i+1;
+  slideBtnWrap.append(button);
+}
+
+// Change the slide, if the button is clicked.
+const slideBtnAll = document.querySelectorAll(".slide_btn_wrap button");
+slideBtnAll.forEach((item) => {
+  item.addEventListener("click", () => {
+    const currentSlide = document.querySelector(".show");
+    let slideItem = document.querySelector(`ul li:nth-child(${item.innerText})`);
+    clearInterval(slideInterval);
+    currentSlide.classList.remove(SHOW_CLASS);
+    slideItem.classList.add(SHOW_CLASS);
+    stopBtn.innerText = "재생";
+  });
+});
+
+
 // ToggleSlideInterval
 function toggleSlideInterval() {
   if(stopBtn.innerText === "일시정지") {
