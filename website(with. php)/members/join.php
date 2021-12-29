@@ -27,8 +27,8 @@
         function form_check(){
             
             // 객체 생성
-            var uname = document.getElementById("uname");
-            var uid = document.getElementById("uid");
+            var uname = document.getElementById("u_name");
+            var uid = document.getElementById("u_id");
             var pwd = document.getElementById("pwd");
             var repwd = document.getElementById("repwd");
             var mobile = document.getElementById("mobile");
@@ -48,7 +48,7 @@
                 return false;
             };
             var uid_len = uid.value.length;
-            if( uid_len < 4 || uid_len > 12){
+            if(uid_len < 4 || uid_len > 12){
                 var err_txt = document.querySelector(".err_id");
                 err_txt.textContent = "아이디는 4~12글자만 입력할 수 있습니다.";
                 uid.focus();
@@ -124,7 +124,7 @@
             </p>
 
             <p>
-                <label for="uid" class="txt">아이디</label>
+                <label for="u_id" class="txt">아이디</label>
                 <input type="text" name="u_id" id="u_id" class="u_id" readonly>
                 <button type="button" class="btn" onclick="id_search()">아이디 중복확인</button>
                 <br>
