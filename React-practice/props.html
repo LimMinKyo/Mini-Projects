@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+  <div id="root">
+
+  </div>
+</body>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/prop-types@15.6/prop-types.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.6.0/prop-types.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+  function Btn({text, onClick, fontSize = 16}){
+    console.log(text, "was rendered");
+    return (
+      <button 
+      onClick={onClick}
+      style={{
+        backgroundColor: "tomato",
+        color: "white",
+        border: 0,
+        padding: "10px 20px",
+        borderRadius: "10px",
+        fontSize,
+      }}>
+      {text}    
+      </button>
+    );
+  }
+  const MemorizedBtn = React.memo(Btn);
+  Btn.propTypes = {
+    text: PropTypes.string.isRequired,
+    fontSize: PropTypes.number.isRequired,
+  };
+  function App(){
+    const [value, setValue] = React.useState("Save Changes");
+    const changeValue = () => setValue("Revert Changes");
+    return (
+      <div>
+        <Btn text={value} onClick={changeValue} fontSize={18} />
+        <Btn text="Confirm Changes" />
+      </div>
+    );
+  }
+  const root = document.getElementById("root");
+  ReactDOM.render(<App />, root);
+</script>
+</html>
